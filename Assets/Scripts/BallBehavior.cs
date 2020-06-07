@@ -2,8 +2,11 @@
 
 public class BallBehavior : MonoBehaviour
 {
-    private float x = 0;
-    private float y = 0;
+    public float x = 0;
+    public float y = 0;
+
+	public float xSpeed = 2;
+	public float ySpeed = 3;
 
 	// Start is called before the first frame update
 	private void Start()
@@ -14,19 +17,41 @@ public class BallBehavior : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
     {
-        // start your code here!
+		// start your code here!
 
-        x = 0;
+		x += xSpeed * Time.deltaTime;
+		y += ySpeed * Time.deltaTime;
+
+		if(x > 10 && xSpeed > 0)
+		{
+			xSpeed = -xSpeed;
+		}
+		if(x < -10 && xSpeed < 0)
+		{
+			xSpeed = -xSpeed;
+		}
+		if(y > 10 && ySpeed > 0)
+		{
+			ySpeed = -ySpeed;
+		}
+		if(y < -10 && ySpeed < 0)
+		{
+			ySpeed = -ySpeed;
+		}
 
 
+		// end your code here! Leave code under here alone.
 
-        // end your code here! Leave code under here alone.
-
-        UpdateBallPosition();
+		UpdateBallPosition();
     }
 
     private void UpdateBallPosition()
     {
         transform.position = new Vector2(x, y);
     }
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		
+	}
 }
