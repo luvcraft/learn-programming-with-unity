@@ -29,4 +29,9 @@ public class BallBehavior : MonoBehaviour
     {
         transform.position = new Vector2(x, y);
     }
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		
+	}
 }
