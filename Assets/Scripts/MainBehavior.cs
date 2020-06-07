@@ -22,11 +22,7 @@ public class MainBehavior : MonoBehaviour
     {
         // start your code here!
 
-
-
-
-
-
+        x = 0;
 
 
 
