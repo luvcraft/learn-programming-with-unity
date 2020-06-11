@@ -22,36 +22,36 @@ public class BallBehavior : MonoBehaviour
 		x += xSpeed * Time.deltaTime;
 		y += ySpeed * Time.deltaTime;
 
-		if(x > 10 && xSpeed > 0)
+		if(x > 10)
 		{
+			x = 10;
 			xSpeed = -xSpeed;
 		}
-		if(x < -10 && xSpeed < 0)
+		if(x < -10)
 		{
+			x = -10;
 			xSpeed = -xSpeed;
 		}
-		if(y > 10 && ySpeed > 0)
+		if(y > 10)
 		{
+			y = 10;
 			ySpeed = -ySpeed;
 		}
-		if(y < -10 && ySpeed < 0)
+		if(y < -10)
 		{
+			y = -10;
 			ySpeed = -ySpeed;
 		}
-
 
 		// end your code here! Leave code under here alone.
 
-		UpdateBallPosition();
-    }
-
-    private void UpdateBallPosition()
-    {
         transform.position = new Vector2(x, y);
     }
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		
+		Debug.Log("OnCollisionEnter: " + collision.gameObject.name);
+
+
 	}
 }
