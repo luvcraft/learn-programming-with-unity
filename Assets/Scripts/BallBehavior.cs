@@ -22,11 +22,6 @@ public class BallBehavior : MonoBehaviour
 
         // end your code here! Leave code under here alone.
 
-        UpdateBallPosition();
-    }
-
-    private void UpdateBallPosition()
-    {
         transform.position = new Vector2(x, y);
     }
 
