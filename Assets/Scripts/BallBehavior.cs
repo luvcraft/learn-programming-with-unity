@@ -27,6 +27,8 @@ public class BallBehavior : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		
+		Debug.Log("OnCollisionEnter: " + collision.gameObject.name);
+
+
 	}
 }
